@@ -1,0 +1,3 @@
+jsp/reinsure/bill/settstorebill.jsp
+jsp/reinsure/bill/facsettstorebill.jsp
+WEB-INF/classes/com/isoftstone/pcis/reinsure/bm/bill/BillManagementAction.class

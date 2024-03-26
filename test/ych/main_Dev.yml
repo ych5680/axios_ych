@@ -1,0 +1,16 @@
+---
+- name: Deploy application to remote server
+  hosts: Ser_Dev
+  gather_facts: false
+
+  tasks:
+    - name: Copy reinsure-1.0.0-SNAPSHOT.war to remote server
+      copy:
+        src: target/reinsure-1.0.0-SNAPSHOT.war
+        dest: /Program/WebApp/scripts/reinsure/reinsure.war
+
+    - name: Execute move_policy_nvhl_war.sh script
+      shell: sh /Program/WebApp/scripts/reinsure/move_reinsure.sh
+
+    - name: Execute reinsure.sh script
+      shell: /Program/WebApp/scripts/reinsure/wideCloud_reinsure.sh >/dev/null 2>&1 &
